@@ -1,0 +1,73 @@
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+# Sample employee dataset (You can replace it with your actual data)
+data = {
+    'Employee Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Department': ['Sales', 'HR', 'IT', 'Sales', 'IT'],
+    'Targets': [100, 150, 120, 90, 110],
+    'Achieved': [95, 140, 110, 85, 100],
+    'Joining Date': ['2022-01-15', '2021-03-21', '2023-06-18', '2020-10-01', '2022-09-12'],
+    'Rating': [4, 5, 3, 4, 4]
+}
+
+# Convert data into a DataFrame
+df = pd.DataFrame(data)
+df['Joining Date'] = pd.to_datetime(df['Joining Date'])
+
+# Create a bar chart for Department-wise performance
+fig_bar = px.bar(df, x='Department', y='Achieved', color='Department', 
+                 title="Department-wise Performance", 
+                 labels={"Achieved": "Achieved Targets"})
+fig_bar.show()
+
+# Create a Gauge chart for Target vs Achieved (for a specific employee, here Alice)
+employee_name = 'Alice'
+employee_data = df[df['Employee Name'] == employee_name].iloc[0]
+fig_gauge = go.Figure(go.Gauge(
+    domain={'x': [0, 1], 'y': [0, 1]},
+    value=employee_data['Achieved'],
+    title={'text': f"Target vs Achieved - {employee_name}"},
+    gauge={'axis': {'range': [0, employee_data['Targets']]},
+           'bar': {'color': "lightblue"},
+           'steps': [
+               {'range': [0, employee_data['Achieved']], 'color': 'green'},
+               {'range': [employee_data['Achieved'], employee_data['Targets']], 'color': 'red'}],
+           'threshold': {'line': {'color': "black", 'width': 4}, 'thickness': 0.75, 'value': employee_data['Achieved']}}))
+fig_gauge.show()
+
+# Create a scatter plot for Employee Ratings vs Achievements
+fig_scatter = px.scatter(df, x='Rating', y='Achieved', color='Department', 
+                         title="Employee Ratings vs Achievements", 
+                         labels={"Achieved": "Achieved Targets", "Rating": "Employee Rating"})
+fig_scatter.show()
+
+# Show detailed employee performance in a table
+fig_table = go.Figure(data=[go.Table(
+    header=dict(values=['Employee Name', 'Department', 'Targets', 'Achieved', 'Joining Date', 'Rating']),
+    cells=dict(values=[df['Employee Name'], df['Department'], df['Targets'], df['Achieved'], df['Joining Date'], df['Rating']]))
+])
+fig_table.show()
+
+# Add slicers (Interactive filters)
+# Slicer for Department
+fig_department = px.bar(df, x='Department', y='Achieved', color='Department', 
+                        title="Department-wise Performance (Sliced)", 
+                        labels={"Achieved": "Achieved Targets"})
+fig_department.update_layout(
+    updatemenus=[dict(
+        type="dropdown", 
+        x=0.17, y=1.15, 
+        buttons=[dict(label="All", method="relayout", args=["{}"]),
+                 dict(label="Sales", method="relayout", args=[{"x": [0, 1], "y": [0, 1], "text": "Sales"}])])]
+)
+
+# Slicer for Date (based on Joining Date)
+fig_date = px.bar(df, x='Joining Date', y='Achieved', color='Department', 
+                  title="Performance Over Time", 
+                  labels={"Achieved": "Achieved Targets"})
+fig_date.show()
+
+# Show all the visuals together in an interactive dashboard (Using Plotly Dash or Jupyter Notebooks)
+
