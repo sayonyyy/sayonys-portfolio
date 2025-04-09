@@ -411,50 +411,6 @@ h1 span {
   background-color: #111;
 }
 
-
-/* Responsive Tweaks start */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 140px;
-  }
-
-  .image {
-    max-width: 90%;
-  }
-
-  .title,
-  .social {
-    padding: 12px 30px;
-    font-size: 24px;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .about-sec {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #image-me,
-  .about-details {
-    width: 90%;
-  }
-}
-
-/* Responsive Tweaks end*/
-
-
 /* PROJECT SECTION */
 
 #projects {
@@ -555,4 +511,119 @@ h1 span {
 .project-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(150, 82, 82, 0.4);
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .social {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    padding: 0 15px;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+
+  .image {
+    max-width: 100%;
+  }
+
+  .image img {
+    height: auto;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  h1 span {
+    font-size: 40px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .cv, .hire {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ABOUT SECTION */
+  .about-sec {
+    flex-direction: column;
+    padding: 0 15px;
+    margin-top: 60px;
+  }
+
+  .about-block {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .image-me {
+    width: 100%;
+  }
+
+  #image-me {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .about-details {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-everything {
+    max-height: 400px;
+    padding: 0 10px;
+  }
+
+  .education h3 {
+    font-size: 24px;
+  }
+
+  .education h5 {
+    font-size: 18px;
+  }
+
+  /* PROJECT SECTION */
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-heading {
+    font-size: 2rem;
+  }
 }
