@@ -12,8 +12,55 @@ html {
   list-style: none;
 }
 
+:root {
+  --bg-color: #000;
+  --about-bg-color: #0e0d0d;
+  --project-bg-color: #121213;
+  --nav-bg-color: #000;
+  --text-color: #fff;
+  --accent: #afc87c;
+  --developer: #9d9c9c;
+  --navlia-color: #f4a1a1;
+  --about-box-shad: #00ffffb9;
+  --typewriter:  #7fdadacc;
+  --name-color: #965252;
+  --institute-color: lightslategray;
+  --stream-color: #ab9494;
+}
+
+.theme-light {
+  --bg-color: #b1a4a4;
+  --about-bg-color: #a49797;
+  --project-bg-color: #928888;
+  --nav-bg-color: #807b7bfb;
+  --text-color: #000;
+  --accent: #294810;
+  --developer: #484545;
+  --navlia-color: #900a0a;
+  --about-box-shad: #073434f8;
+  --typewriter:  #2d3087e7;
+  --name-color: #5b2c2c;
+  --institute-color: rgb(49, 65, 81);
+  --stream-color: #3c3636;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
 body {
-  background-color: #000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.5s, color 0.5s;
   color: #fff;
   font-size: 24px;
   overflow-x: hidden;
@@ -24,6 +71,8 @@ body {
 h1 {
   font-size: 75px;
   font-weight: 600;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 h2, h3, h4, h5 {
@@ -47,9 +96,9 @@ h6 {
 
 /* nav start */
 nav {
-  background-color: #000;
+  background-color: var( --nav-bg-color);
+  color: var(--text-color);
   width: 100%;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -64,6 +113,7 @@ nav {
 .title {
   display: flex;
   border: 1px solid #444;
+  color: var(--accent);
   border-radius: 5px;
   padding: 12px 200px 12px 30px;
   font-size: 30px;
@@ -82,7 +132,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   padding: 10px;
   transition: all 0.3s ease;
@@ -111,7 +161,7 @@ nav ul li a.active {
 }
 
 nav ul li a:hover {
-  color: #f4a1a1;
+  color: var(--navlia-color);
   animation: glideUp 0.6s ease forwards;
 }
 
@@ -125,7 +175,7 @@ nav ul li a:hover {
 }
 
 .social a {
-  color: #afc87c;
+  color: var(--accent);
   font-size: 24px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -169,7 +219,7 @@ nav ul li a:hover {
 }
 
 .developer {
-  color: #9d9c9c;
+  color: var(--developer);
   font-size: 17px;
   margin-bottom: 30px;
 }
@@ -177,7 +227,7 @@ nav ul li a:hover {
 h1 span {
   font-size: 60px;
   display: inline-block;
-  color: #965252;
+  color: var(--name-color);
 }
 
 .buttons {
@@ -192,7 +242,7 @@ h1 span {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.4s ease;
-  border: 1px solid white;
+  border: 1px solid var(--text-color);
 }
 
 .cv {
@@ -201,14 +251,14 @@ h1 span {
 }
 
 .hire {
-  color: white;
+  color: var(--text-color);
   background: transparent;
   margin-left: 12px;
 }
 
 .cv:hover {
   background: transparent;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .hire:hover {
@@ -226,6 +276,7 @@ h1 span {
   height: 60vh;
   object-fit: cover;
   border-radius: 10px;
+  border: 2.5px solid #424040;
 }
 
 /* about start */
@@ -236,11 +287,10 @@ h1 span {
 
 
 .about-sec {
-  width: 100%;
-  max-width: 1200px;
-  margin: 100px auto;
+  background: var(--about-bg-color);
   padding: 0 20px;
   padding-top: 120px;
+  padding-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -284,8 +334,7 @@ h1 span {
   width: 45%;
   opacity: 0;
   transform: translateX(0) scale(1.2);
-  filter: none;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.727); /* Optional for glow */
+  filter: none; 
 } 
 
 .ab_content {
@@ -296,11 +345,16 @@ h1 span {
   gap: 40px;
 }
 .about-everything p {
+  color: var(--text-color);
   font-size: 14px;
   margin-top: 20px;
   margin-bottom: 30px;
   letter-spacing: 1.6px;
   line-height: 1.5;
+}
+
+.itsme h5{
+  color: var(--text-color);
 }
 
 #ab_content h3 {
@@ -317,7 +371,7 @@ h1 span {
 }
 
 .typewriter-text {
-  color: #7fdadacc;
+  color: var(--typewriter);
   font-family: monospace;
   font-size: 23px;
   font-weight: 800;
@@ -341,22 +395,24 @@ h1 span {
 }
 
 .date-edu {
+  color: var(--text-color);
   display: inline-block;
   padding: 7px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.29);
+  border: 1px solid #444;
   border-radius: 30px;
   margin-bottom: 15px;
 }
 
 .edu-items span.stream{
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 550;
+  color: var(--stream-color);
 }
 
 .education h3{
   font-size: 32px;
   font-family: 'Times New Roman', Times, serif;
-  color: #a6ca86ed;
+  color: var(--accent);
   display: flex;
   justify-content: center;
   margin: 30px 0 20px 0;
@@ -366,8 +422,8 @@ h1 span {
 .education h5 {
   font-size: 22px;
   margin-bottom: 8px;
-  font-weight: 600;
-  color: lightslategray;
+  font-weight: 650;
+  color: var(--institute-color);
 }
 
 /* Animation keyframes */
@@ -391,7 +447,7 @@ h1 span {
     transform: translateX(0) scale(1);
     opacity: 1;
     filter: blur(0);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.727);
+    box-shadow: 0 0 20px var(--about-box-shad);
   }
 }
 
@@ -419,7 +475,7 @@ h1 span {
 
 .projects-section {
   padding: 60px 20px;
-  background: #09080b; /* Deep chocolate background */
+  background: var(--project-bg-color);
   color: #fff;
   text-align: center;
 }

@@ -1,23 +1,24 @@
-// About animation trigger on scroll
-const aboutDetails = document.querySelector(".about-details");
+// Select the toggle button
+const toggleBtn = document.querySelector('.theme-toggle');
+const body = document.body;
 
-const aboutSection = document.querySelector(".about-sec");
+// Toggle theme on button click
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('theme-light');
 
-function revealAboutSection() {
-  const rect = aboutSection.getBoundingClientRect();
-  const isVisible = rect.top < window.innerHeight - 100;
+  // Save the selected theme to localStorage
+  localStorage.setItem('theme', body.classList.contains('theme-light') ? 'light' : 'dark');
+});
 
-  if (isVisible) {
-    aboutSection.classList.add("reveal");
-  }
+// Load theme from localStorage on page load
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('theme-light');
 }
 
-
-
-// Trigger when page loads or scrolls
+// Run after DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // About section animation
   const aboutDetails = document.querySelector('.about-details');
-
   if (aboutDetails) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -30,35 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(aboutDetails);
   }
+
+  // Typing effect
+  const text = `ata Science Student & a Web Developer!`;
+  const typeTarget = document.querySelector('.typewriter-text');
+  let i = 0;
+  let isDeleting = false;
+  let speed = 100;
+
+  function typeEffect() {
+    if (isDeleting) {
+      i--;
+    } else {
+      i++;
+    }
+
+    typeTarget.textContent = "D" + text.substring(0, i);
+
+    if (!isDeleting && i === text.length) {
+      setTimeout(() => isDeleting = true, 1000);
+    } else if (isDeleting && i === 0) {
+      isDeleting = false;
+    }
+
+    let typingSpeed = isDeleting ? 50 : speed;
+    setTimeout(typeEffect, typingSpeed);
+  }
+
+  typeEffect();
 });
-
-
-
-
-// Typing effect with "I" fixed
-const text = `ata Science Student & a Web Developer!`;
-const typeTarget = document.querySelector('.typewriter-text');
-let i = 0;
-let isDeleting = false;
-let speed = 100;
-
-function typeEffect() {
-  if (isDeleting) {
-    i--;
-  } else {
-    i++;
-  }
-
-  typeTarget.textContent = "D" + text.substring(0, i);
-
-  if (!isDeleting && i === text.length) {
-    setTimeout(() => isDeleting = true, 1000);
-  } else if (isDeleting && i === 0) {
-    isDeleting = false;
-  }
-
-  let typingSpeed = isDeleting ? 50 : speed;
-  setTimeout(typeEffect, typingSpeed);
-}
-
-document.addEventListener('DOMContentLoaded', typeEffect);
