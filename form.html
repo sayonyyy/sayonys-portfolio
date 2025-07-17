@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent: #e277ab;
+      --button-bg: #78ccd4;
+      --button-text: #000;
+      --button-hover-bg: #58a0a7;
+      --button-hover-text: #000;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .thank-container {
+      text-align: center;
+      background: #121213;
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(185, 124, 200, 0.4);
+      width: 80%;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .back-btn {
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: var(--button-hover-bg);
+      color: var(--button-hover-text);
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-container">
+    <h1>Thanks!</h1>
+    <p>The form was submitted successfully.</p>
+    <a class="back-btn" href="index.html">Go Back</a>
+  </div>
+</body>
+</html>

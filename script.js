@@ -60,3 +60,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   typeEffect();
 });
+
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = "form.html"; // this is your custom thank you page
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    });
+  });
