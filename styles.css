@@ -481,6 +481,14 @@ h3 span{
   color: var(--institute-color);
 }
 
+.experience h5{
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 650;
+  color: var(--institute-color);
+}
+
+
 .certifications, .skills, .languages {
   margin-top: 30px;
 }
