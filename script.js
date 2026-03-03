@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Typing effect
-  const text = `ata Science Student & a Web Developer!`;
+  const text = `ata Analytics & Machine Learning Developer!`;
   const typeTarget = document.querySelector('.typewriter-text');
   let i = 0;
   let isDeleting = false;
