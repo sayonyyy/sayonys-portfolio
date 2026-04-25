@@ -11,6 +11,16 @@
     <script src="script.js" defer></script>
     <title>Sayony Chakraborty | Portfolio</title>
   </head>
+
+  <style>
+      p.edu-p {
+        font-size: 11px; /* You can change this to 10px or any other smaller size */
+      }
+
+      .itsme p {
+        font-size: 10px; /* Adjust this value as needed to make it smaller */
+      }
+    </style>
   <body>
     <header class="interface">
       <nav class="navbar">
@@ -52,13 +62,13 @@
       <section class="container" id="home">
         <div class="midbar">
           <div class="content">
-            <p class="developer">DATA SCIENCE & ANALYTICS || MACHINE LEARNING || STATISTICS || FORECASTING</p>
+            <p class="developer">DATA SCIENCE & ANALYTICS || GOOGLE ANALYTICS (GA4) || MACHINE LEARNING || FORECASTING</p>
             <h1>
               Hello, I'm <br />
               <span class="name">Sayony Chakraborty</span>
             </h1>
             <div class="buttons">
-              <a href="static/sayony-chakraborty-resume.pdf" download target="_blank">
+              <a href="static/sayony-chakraborty-analyst-cv.pdf" download target="_blank">
                 <button class="cv">Download CV</button>
               </a>
               <a href="#contact">
@@ -95,15 +105,20 @@
                     I'm a <br />
                     <h5><span class="typewriter-text"></span></h5>
                   </h5>
-                  <p> I’m Sayony Chakraborty, a Data Science undergraduate at Techno India University, 
-                    passionate about machine learning, time-series forecasting, and building intelligent, 
-                    data-driven solutions. I’m strengthening my foundation in data analysis, statistics, 
-                    and ML engineering, and I enjoy applying these skills to real-world problems. <br><br> 
-                    I love working on projects where data reveals patterns, supports decisions, or powers 
-                    predictive models. From automation to forecasting to interpretable machine-learning 
-                    workflows, my goal is to transform raw data into meaningful insights. I’m currently 
-                    expanding my skills through hands-on projects, continuous learning, and preparing for 
-                    roles in data science and analytics. </p>
+                  <p> I'm Sayony Chakraborty, a Data Science undergraduate at Techno India University, 
+                    passionate about analytics, product thinking, and building data-driven solutions 
+                    that actually mean something. I have hands-on experience as a Business & Data 
+                    Analyst at Goldfinn Technologies, where I built automated pipelines, analyzed 
+                    marketing campaign performance, and translated data findings into real business 
+                    decisions.
+                    <br><br> 
+                    I love working on problems where the answer only reveals itself when you look at 
+                    the data carefully enough — from customer behavior and market analysis to machine 
+                    learning workflows and predictive modeling. I'm also Google Analytics (GA4) certified, 
+                    and I think seriously about why products succeed or fail, not just what the numbers say.
+                    <br><br> 
+                    Outside of data, I also work as a web developer — building clean, functional websites —
+                    and write poetry on the side — which, somehow, has made me sharper at both. </p>
 
                 </div>
 
@@ -118,11 +133,16 @@
                     <h5>Data Analyst Intern — Goldfinn Technologies</h5>
 
                     <p class="edu-p">
-                      • Designed and automated Python + MySQL workflows using n8n for internal reporting and data processing.<br>
-                      • Performed API testing using Postman and created structured API documentation for internal integration.<br>
-                      • Generated recurring performance and operational reports for product and business teams.<br>
-                      • Analyzed dataset patterns to support product decision-making and improve internal processes.<br>
-                      • Collaborated with the engineering team to validate workflows, resolve integration issues, and ensure data quality.
+                      • Automated Python + MySQL reporting workflows using n8n, reducing manual tracking effort by ~40% and enabling teams to deliver
+                      to surface product insights ~15% faster. <br>
+                      • Built and validated data pipelines for trademark tracking, brand monitoring, and client-ready reports, improving consulting
+                      turnaround. <br>
+                      • Built brand protection pipelines using Selenium, Playwright & BeautifulSoup for web crawling and OpenCV for logo detection across
+                      PDFs — aggregating findings into client reports and automating the workflow via n8n. <br>
+                      • Analyzed marketing campaign performance across digital platforms using KPI dashboards, identified underperforming ad spend, and
+                      recommended budget reallocation — translating findings into actionable business decisions.<br>
+                      • Partnered with engineering to resolve integration issues and improve data quality, reducing recurring discrepancies by ~30%.
+
                     </p>
                   </div>
                 </div>
@@ -176,6 +196,12 @@
           <div class="certifications">
             <h3><span>Certifications</span></h3>
             <p class="edu-p">
+              <strong>Google Analytics Certification (GA4)</strong> — Google Skillshop, April 2026<br>
+              Credential ID: 180702869 &nbsp;|&nbsp; 
+              <a href="https://skillshop.credential.net/7e89fd74-6bf0-4bd1-b849-9bc24e859945" target="_blank">View Certificate</a>
+            </p>
+
+            <p class="edu-p">
               Completed courses under <strong>Skills Academia – Session 14 (2024)</strong><br>
               • Web Development<br>
               • UI/UX Design Fundamentals<br>
@@ -190,9 +216,10 @@
                   <p class="edu-p">
                       <strong>• Languages:</strong> Python, SQL, Java, R, HTML, CSS, JavaScript<br>
                       <strong>• Python Libraries:</strong> Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, PyTorch<br>
-                      <strong>• Tools & Technologies:</strong> Git, GitHub, n8n, Vercel, Power BI, MS Office, MongoDB, Postman, Swagger<br>
+                      <strong>• Tools & Technologies:</strong> Power BI, Google Analytics (GA4), Excel, n8n (AI automation), Selenium, Playwright, GitHub, MongoDB, Postman<br>
                       <strong>• Concepts:</strong> Data Analysis, API Testing & Documentation, Machine Learning, Web Development, UI/UX Basics<br>
-                      <strong>• Operations Research:</strong> Linear Programming, Assignment Problems, Transportation Models, Network Analysis
+                      <strong>• Operations Research:</strong> Linear Programming, Assignment Problems, Transportation Models, Network Analysis<br>
+                      <strong>• Product & Analytics:</strong> KPI tracking, A/B testing, User Behavior Analysis, PRD/Product Documentation, Market Analysis
                   </p>
                 </div>
 
@@ -295,6 +322,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="https://github.com/sayonyyy/cross-platform-ad-performance-analysis" target="_blank">
             <button class="project-btn">
               <i class="fab fa-github"></i> GitHub
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>OLX Verified Listing Feature – PRD</h3>
+        <p>
+          Designed a self-initiated PRD proposing an <b>OLX Verified Listing feature</b> to resolve buyer–seller trust gaps. Analyzed user behavior, 
+          defined personas, and mapped end-to-end transaction flows with <b>structured verification and pricing insights</b>. Introduced condition 
+          checklists, photo validation, and price benchmarking to <b>streamline decision-making and reduce friction</b>. Defined key metrics (targeting 
+          <b>+15% conversion</b>) and a phased rollout strategy to evaluate time-to-sale and trust impact.
+        </p>
+
+        <div class="btn-group">
+          <a href="https://tinyurl.com/4whek5et" target="_blank">
+            <button class="project-btn">
+              <i class="fas fa-file-alt"></i> Google Docs
             </button>
           </a>
         </div>
